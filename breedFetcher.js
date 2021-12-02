@@ -1,4 +1,4 @@
-// request librar
+// request library
 
 const request = require("request");
 
