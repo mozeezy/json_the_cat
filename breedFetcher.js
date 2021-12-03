@@ -2,11 +2,10 @@
 
 const request = require("request");
 
-// const catBreedDescription = function (breed) {
-//   breed = process.argv[2]
-const domain =
-  "https://api.thecatapi.com/v1/breeds/search?q=" + process.argv[2];
-request(domain, function(error, response, body) {
+const fetchBreedDescription = function (breedName) {
+  breed = process.argv[2]
+const domain = "https://api.thecatapi.com/v1/breeds/search?q=" + process.argv[2];
+request(domain, function (error, response, body) {
   const data = JSON.parse(body);
   if (error) {
     console.log("Error:", error);
@@ -16,6 +15,9 @@ request(domain, function(error, response, body) {
     console.log(data[0].description);
   }
 });
+}
+
+module.exports = { fetchBreedDescription };
 // }
 
 // request('http://www.google.com', function (error, response, body) {
